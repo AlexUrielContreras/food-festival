@@ -1,6 +1,7 @@
 const path  = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 // main config object
 module.exports = {
@@ -26,6 +27,20 @@ module.exports = {
         }), 
         new BundleAnalyzerPlugin({
             analyzerMode: 'static',
+        }),
+        new WebpackPwaManifest({
+            name: 'Food Event',
+            short_name: 'Foodies',
+            description: 'An app that allows you to view upcoming food events.',
+            start_url: '../index.html',
+            background_color: '#ffffff',
+            fingerprint: false,
+            inject: false,
+            icons: [{
+                src: path.resolve('assets/img/icons/icon-512x512.png'),
+                size: [96, 128, 192, 256, 384, 512],
+                destination: path.join('assets', 'icons')
+            }]
         })
     ],
     
