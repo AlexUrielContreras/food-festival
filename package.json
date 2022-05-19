@@ -2,11 +2,12 @@
   "name": "food-festive",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "assets/js/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "start:dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -20,13 +21,15 @@
   "homepage": "https://github.com/AlexUrielContreras/food-festival#readme",
   "devDependencies": {
     "file-loader": "^6.2.0",
+    "image-webpack-loader": "^8.1.0",
     "webpack": "^5.72.1",
     "webpack-bundle-analyzer": "^4.5.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "image-webpack-loader": "^8.1.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "popper.js": "^1.14.3"
   }
 }

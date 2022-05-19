@@ -17,7 +17,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: __dirname + '/dist'
     },
-
+   
     // tell webpack that we are using libarie's global variables (i.e: jquery) in this case
     plugins: [
         new webpack.ProvidePlugin({
@@ -28,10 +28,15 @@ module.exports = {
             analyzerMode: 'static',
         })
     ],
+    
+    devServer: {
+        static: {
+          directory: path.join(__dirname, ""),
+        },
+    },
 
     // the way webpack will run 
     mode: 'development',
-
     module: {
         rules: [
             {
